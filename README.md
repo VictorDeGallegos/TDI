@@ -1,4 +1,5 @@
-# TDI 
+# TDI
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
 ![Status badge](https://img.shields.io/badge/status-en%20progreso-yellow?style=for-the-badge)
 
 ## Introducción 🏁
@@ -18,9 +19,9 @@ Repositorio correspondiente a la asignatura de Tecnologías para Desarrollos en 
 ## Entregables 📦
 
 * [Practicas]()
-  * [Practica 1]()
 * [Tareas]()
-  * [Tarea 1]()
+  * [Tarea 1](https://github.com/VictorDeGallegos/TDI/blob/main/Tareas/Tarea%201/Tarea%201.pdf)
+  * [Tarea 2](https://github.com/VictorDeGallegos/TDI/tree/main/Tareas/Tarea%202/Envio%20y%20visualizacion%20de%20mensajes)
 * [Proyectos]()
 
 ## Expresiones de Gratitud 🎁
