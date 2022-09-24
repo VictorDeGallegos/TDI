@@ -14,55 +14,91 @@
 >
 > ---
 
-## Pre-requisitos 📋
 
-* [Java 8](https://www.oracle.com/mx/java/technologies/javase/javase-jdk8-downloads.html)
-* [Apache-tomcat-9.0.41](https://tomcat.apache.org/download-90.cgi)
-  
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-## Ejecutar proyecto🚀
+**Tabla de contenido**
 
-Nuestro equipo utilizó el IDE de [Visual Studio Code](https://code.visualstudio.com/) para el desarrollo de la aplicación, por lo que se recomienda utilizarlo para la ejecución de los scripts pero tambien puede ser ejecutado en el IDE de su preferencia.
+- [Tarea 2 - Envío y visualización de mensajes 💬](#tarea-2---envío-y-visualización-de-mensajes-)
+  - [Tecnologías para Desarrollos en Internet 2023-1 Universidad Nacional Autónoma de México (UNAM)](#tecnologías-para-desarrollos-en-internet-2023-1-universidad-nacional-autónoma-de-méxico-unam)
+  - [**Pre-requisitos 📋**](#pre-requisitos-)
+  - [**Ejecutar proyecto🚀**](#ejecutar-proyecto)
+    - [Clonar el repositorio](#clonar-el-repositorio)
+    - [Cargar el proyecto en NetBeans](#cargar-el-proyecto-en-netbeans)
+    - [Resolver los problemas de dependencias](#resolver-los-problemas-de-dependencias)
+    - [Seleccione el servidor GlassFish 4.1.1](#seleccione-el-servidor-glassfish-411)
+    - [Ejecute el proyecto](#ejecute-el-proyecto)
+    - [Ver el resultado en el navegador web](#ver-el-resultado-en-el-navegador-web)
+    - [Detener el servidor](#detener-el-servidor)
+  - [Expresiones de Gratitud 🎁](#expresiones-de-gratitud-)
 
-* En caso de utilizar Visual Studio Code:
-  * Se debe instalar la extensión de Java de Microsoft, la cual se puede descargar desde [este enlace](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack).
-  * Se debe instalar la extensión de Comunity Server Connectors de Red Hat, la cual se puede descargar desde [este enlace](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-community-server-connector).
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-Una vez instaladas las extensiones y con el proyecto abierto en VS Code nos dirigimos a la pestaña Servers y damos click en el botón de Add Server.
 
-<img width="812" alt="Nuevo server" src="https://user-images.githubusercontent.com/41756950/191798085-a79f8603-990f-4e0b-8438-e328063b88c9.png">
 
-En la ventana emergente nos preguntara si deseamos descargar un nuevo servidor o utilizar uno ya existente, seleccionamos la opción `Yes` y nos aparecera una lista de servidores disponibles
+## **Pre-requisitos 📋**
 
-<img width="812" alt="Yes" src="https://user-images.githubusercontent.com/41756950/191799508-d29c5be3-734a-4da0-bf9c-8a1bfa9d6215.png">
+* [Java 8+](https://www.oracle.com/mx/java/technologies/javase/javase-jdk8-downloads.html)
+* [GlassFish Server 4.1.1](https://javaee.github.io/glassfish/download)
+* [NetBeans 8.2+](https://netbeans.apache.org/download/index.html)
 
-Seleccionamos el servidor de Apache Tomcat 9.0.41
 
-<img width="812" alt="Version" src="https://user-images.githubusercontent.com/41756950/191799989-7a39dbd7-798a-4c1d-b093-6c9de4b9ff1c.png">
 
-Nos aparecera un archivo nuevo para leer la licencia, damos en `Continue`
+## **Ejecutar proyecto🚀**
 
-<img width="812" alt="Licencia" src="https://user-images.githubusercontent.com/41756950/191801168-5455fc68-122d-4163-8862-319a378b48f0.png">
+### Clonar el repositorio
 
-Aceptamos la licencia despues podemos cerrar el archivo de la licencia sin guardar
+```bash
+git clone  https://github.com/VictorDeGallegos/TDI.git
+```
 
-<img width="812" alt="Aceptar" src="https://user-images.githubusercontent.com/41756950/191801799-da046c6f-7501-4be1-9585-161ddbfa1ece.png">
+### Cargar el proyecto en NetBeans
 
-Para finalizar nos dirigimos a la carpeta `TDI/Tareas/Tarea 2/Envio y visualizacion de mensajes/dist` y en el archivo `Pracica_11_Envio_y_visualizacion_de_mensajes.war` damos click derecho y seleccionamos la opción `Run on Server`
+Abrir el IDE NetBeans y seleccionar la opción **Open Project**. Posteriormente navegar hasta la carpeta donde se clonó el repositorio y seleccionar la carpeta **Tarea2**.
 
-<img width="468" alt="Run on server" src="https://user-images.githubusercontent.com/41756950/191808640-6e9d8449-5da3-4d38-8771-3575866d7d80.png">
+<img width="1338" alt="Open project" src="https://user-images.githubusercontent.com/41756950/192113497-80769035-305b-495b-9cfa-c04ed745baf2.png">
 
-Y seleccionamos nuestro servidor anteriormente descargado
 
-<img width="721" alt="Selecciona Apache tom-cat" src="https://user-images.githubusercontent.com/41756950/191806681-7e8ded7d-ddff-47ee-bb46-da66d8896cd1.png">
+<img width="1338" alt="Select project" src="https://user-images.githubusercontent.com/41756950/192113547-64d156e6-eb39-4edc-a11d-2a1e36cb9cee.png">
 
-Sin editar los parametros del deployment
+### Resolver los problemas de dependencias
 
-<img width="721" alt="no editar depoloyment" src="https://user-images.githubusercontent.com/41756950/191806920-b3011242-c96f-4f83-999c-1be2f92c66ed.png">
+Nos aparecerá un mensaje de error, esto es debido a que el proyecto no tiene las dependencias necesarias para ejecutarse. Para resolver esto, haga click en el botón **Fix dependencies** o vamos a properties para cargar el servidor.
 
-Y listo, ya podemos acceder a nuestra aplicación desde el navegador en la ruta http://localhost:8080/Practica_11_Envio_y_visualizacion_de_mensajes/
+<img width="1338" alt="Fix dependencies" src="https://user-images.githubusercontent.com/41756950/192113590-7148d7a1-3da3-4079-823b-ae0f2e861b50.png">
 
-<img width="812" alt="Captura de Pantalla 2022-09-22 a la(s) 11 59 17 a m" src="https://user-images.githubusercontent.com/41756950/191807814-45dfd0bd-204a-4855-bb2d-4a1e96058c03.png">
+<img width="1338" alt="Fix dependencies 2" src="https://user-images.githubusercontent.com/41756950/192113642-b9fd5c36-2ff2-40df-a6cc-342b0604adb9.png">
+
+### Seleccione el servidor GlassFish 4.1.1
+Seleccionar el servidor GlassFish 4.1.1 que se descargo al princio del proyecto.
+
+<img width="1338" alt="Fix dependencies 3" src="https://user-images.githubusercontent.com/41756950/192113669-1564a717-c0f7-4863-94c6-0cb1227feb67.png">
+
+### Ejecute el proyecto
+
+<img width="1338" alt="Run project" src="https://user-images.githubusercontent.com/41756950/192113742-fdf21ff7-787b-447d-b484-467af70e11a6.png">
+
+### Ver el resultado en el navegador web
+
+Entre a la siguiente dirección en su navegador web:
+
+```bash
+http://localhost:8080
+```
+
+<img width="812" alt="localhost 8080" src="https://user-images.githubusercontent.com/41756950/192113793-0a0c2912-c014-4b9c-a3eb-3c9c2c983ad1.png">
+
+
+### Detener el servidor
+Vaya a la pestaña "Servicios" en el lado izquierdo de la pantalla (si no es visible, primero seleccione la ventana / Servicios del menú, o presione CTRL + 5)
+
+<img width="812" alt="Captura de Pantalla 2022-09-24 a la(s) 1 55 24 p m" src="https://user-images.githubusercontent.com/41756950/192114228-0e032be0-f0e6-4944-a883-0e7cdc07f58e.png">
+
+Seleccionar la pestaña "Servidores" y detener el servidor GlassFish
+
+<img width="812" alt="Captura de Pantalla 2022-09-24 a la(s) 2 00 38 p m" src="https://user-images.githubusercontent.com/41756950/192114394-bdb0fbf5-f643-4128-8838-a3b40b34e6d8.png">
+
 
 ## Expresiones de Gratitud 🎁
 
