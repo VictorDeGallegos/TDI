@@ -15,7 +15,7 @@
 ArrayList mensajes = (ArrayList)request.getAttribute( "mensajes" );
 if( mensajes != null )
   // Si existen mensajes para ese destinatario,
-  // se generará una tabla con los mismos:
+  // se generarï¿½ una tabla con los mismos:
   for( int i=0; i<mensajes.size(); i++ ) {
     Mensaje m = (Mensaje)mensajes.get(i);
     if (( m.getDestino()).equalsIgnoreCase( nombre )) {
@@ -24,8 +24,8 @@ if( mensajes != null )
     <%}
   }
 if ( !men ) {%>
-    <!-- Si no hay mensajes se envía al usuario
-    a la página de nomensajes.jsp -->
+    <!-- Si no hay mensajes se envï¿½a al usuario
+    a la pï¿½gina de nomensajes.jsp -->
     <jsp:forward page="nomensajes.jsp"/>
 <%}%>
 </table>
