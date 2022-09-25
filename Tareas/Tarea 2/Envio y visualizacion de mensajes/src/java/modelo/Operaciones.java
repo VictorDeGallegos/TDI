@@ -52,7 +52,10 @@ public class Operaciones {
       // Para cada mensaje encontrado crea un objeto
       // Mensaje y lo añade a la colección ArrayList
       while( rs.next() ) {
-        Mensaje m = new Mensaje( rs.getString("remitente"), rs.getString("destinatario"), rs.getString("texto"));
+        Mensaje m = new Mensaje();
+        m.setDestino( rs.getString( "destinatario" ) );
+        m.setRemite( rs.getString( "remitente" ) );
+        m.setTexto( rs.getString( "texto" ) );
         mensajes.add( m );
       }
       cn.close();
@@ -73,6 +76,24 @@ public class Operaciones {
       // la cadena SQL para realizar su insersión
       tsql = "Insert into mensajes values( '";
       tsql += m.getDestino()+ "','" + m.getRemite() + "','" + m.getTexto() + "')";
+      st.execute( tsql );
+      cn.close();
+    }
+    catch( Exception e ) { e.printStackTrace(); }
+  }
+
+  //Elimina un mensaje de la base de datos al presionar el boton eliminar con la imagen Borrar_mail.png
+  public void borrarMensaje( Mensaje m ) {
+    Connection cn;
+    Statement st;
+    ResultSet rs;
+    try {
+      cn = getConnection();
+      st = cn.createStatement();
+      String tsql;
+      // A partir de los datos del mensaje construye
+      // la cadena SQL para realizar su eliminación
+      tsql = "Delete from mensajes where destinatario = '" + m.getDestino() + "' and remitente = '" + m.getRemite() + "' and texto = '" + m.getTexto() + "'";
       st.execute( tsql );
       cn.close();
     }

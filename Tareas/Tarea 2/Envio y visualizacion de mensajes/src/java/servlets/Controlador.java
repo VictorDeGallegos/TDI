@@ -39,5 +39,12 @@ public class Controlador extends HttpServlet {
       RequestDispatcher rd = request.getRequestDispatcher( "/ver.jsp" );
       rd.forward( request, response );
     }
-  } 
+    //Borrado de un mensajes al oprimir Borrar_mail.png
+    if ( op.equals( "borrar" ) ) {
+      Mensaje men = (Mensaje)request.getAttribute( "mensa" );
+      Operaciones oper = new Operaciones( request );
+      oper.borrarMensaje( men );
+      response.sendRedirect( "/ver.jsp" );
+    }
+  }
 }
