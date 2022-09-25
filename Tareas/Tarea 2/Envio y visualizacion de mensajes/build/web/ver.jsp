@@ -7,10 +7,10 @@
 <center>    
 <%String nombre = request.getParameter( "nombre" );%>
 <h1>
-  Mensajes para <%= nombre %>
+  Mensajess para <%= nombre %>
 </h1>
 <table border=1>
-<tr><th>Remitente</th><th>Mensaje</th></tr>
+<tr><th>Remitente</th><th>Mensaje</th><th>Borrar</th></tr>
 <%boolean men = false;
 ArrayList mensajes = (ArrayList)request.getAttribute( "mensajes" );
 if( mensajes != null )
@@ -20,7 +20,7 @@ if( mensajes != null )
     Mensaje m = (Mensaje)mensajes.get(i);
     if (( m.getDestino()).equalsIgnoreCase( nombre )) {
       men = true;%>
-      <tr><td><%= m.getRemite()%></td><td><%= m.getTexto()%></td></tr>
+<tr></td><td><%= m.getRemite()%></td><td><%= m.getTexto()%></td><td><a href="#"> <img style="width: 25px; height: 25px;" src="images/Borrar_mail.png"></a></td></tr>
     <%}
   }
 if ( !men ) {%>
