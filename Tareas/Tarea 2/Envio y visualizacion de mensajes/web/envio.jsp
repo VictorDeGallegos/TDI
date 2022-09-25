@@ -2,7 +2,7 @@
   <head>
     <title>Envio de Mensajes</title>
   </head>
-<!-- Captura de datos e inserción en el Javabean: -->
+<!-- Captura de datos e insercion en el Javabean: -->
 <jsp:useBean id="mensa" scope="request" class="javabeans.Mensaje" />
 <jsp:setProperty name="mensa" property="*"/>
 <% if ( request.getParameter("texto") != null ){%>
@@ -11,7 +11,7 @@
 
 <body>
 <center>       
-  <h1>Generación de mensajes</h1>
+  <h1>Generacion de mensajes</h1>
   <form method="post">
   <br/><br/>
   <b>Datos del mensaje :</b><br/><br/>
@@ -21,7 +21,7 @@
   <br/>
      Introduzca el texto : <br/>
   <textarea name="texto" rows="10" cols="60">
-     ... Escribe tu mensaje aquí ...
+     ... Escribe tu mensaje aqui ...
   </textarea>
   <hr/><br/>
   <input type="submit" name="Submit" value="Enviar">

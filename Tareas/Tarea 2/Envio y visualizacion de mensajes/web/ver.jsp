@@ -10,22 +10,22 @@
   Mensajes para <%= nombre %>
 </h1>
 <table border=1>
-<tr><th>Remitente</th><th>Mensaje</th></tr>
+<tr><th>Remitente</th><th>Mensaje</th><th>Borrar</th></tr>
 <%boolean men = false;
 ArrayList mensajes = (ArrayList)request.getAttribute( "mensajes" );
 if( mensajes != null )
   // Si existen mensajes para ese destinatario,
-  // se generará una tabla con los mismos:
+  // se generarï¿½ una tabla con los mismos:
   for( int i=0; i<mensajes.size(); i++ ) {
     Mensaje m = (Mensaje)mensajes.get(i);
     if (( m.getDestino()).equalsIgnoreCase( nombre )) {
       men = true;%>
-      <tr><td><%= m.getRemite()%></td><td><%= m.getTexto()%></td></tr>
+<tr></td><td><%= m.getRemite()%></td><td><%= m.getTexto()%></td><td><a href="borrar.jsp?nombre=<%=nombre%>&remite=<%=m.getRemite()%>&texto=<%=m.getTexto()%>"> <img style="width: 25px; height: 25px;" src="images/Borrar_mail.png"></a></td></tr>
     <%}
   }
 if ( !men ) {%>
-    <!-- Si no hay mensajes se envía al usuario
-    a la página de nomensajes.jsp -->
+    <!-- Si no hay mensajes se envï¿½a al usuario
+    a la pï¿½gina de nomensajes.jsp -->
     <jsp:forward page="nomensajes.jsp"/>
 <%}%>
 </table>
