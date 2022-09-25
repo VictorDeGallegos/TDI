@@ -18,17 +18,17 @@ public class Controlador extends HttpServlet {
   public void service( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     String op=request.getParameter( "operacion" );
-    // Acceso a la p·gina de envÌo de mensajes
+    // Acceso a la p√°gina de env√≠o de mensajes
     if ( op.equals( "envio" ) )
       response.sendRedirect( "envio.jsp" );
-    // GrabaciÛn de un mensaje
+    // Grabaci√≥n de un mensaje
     if ( op.equals( "grabar" ) ) {
       Mensaje men = (Mensaje)request.getAttribute( "mensa" );
       Operaciones oper = new Operaciones( request );
       oper.grabaMensaje( men );
       response.sendRedirect( "inicio.htm" );
     }
-    // Acceso a la p·gina de solicitud de mensajes
+    // Acceso a la p√°gina de solicitud de mensajes
     if ( op.equals( "muestra" ) )
       response.sendRedirect( "mostrar.htm" );
     // Acceso a la lista de mensajes del usuario

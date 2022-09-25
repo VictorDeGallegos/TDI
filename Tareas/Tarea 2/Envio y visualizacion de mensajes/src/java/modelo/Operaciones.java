@@ -15,7 +15,7 @@ public class Operaciones {
        this.request = request;
    }
     
-  // Método común para la obtención
+  // MÃ©todo comÃºn para la obtenciÃ³n
   // de conexiones
   public Connection getConnection() {
     Connection cn = null;
@@ -50,7 +50,7 @@ public class Operaciones {
       rs = st.executeQuery( tsql );
       mensajes = new ArrayList();
       // Para cada mensaje encontrado crea un objeto
-      // Mensaje y lo añade a la colección ArrayList
+      // Mensaje y lo aÃ±ade a la colecciÃ³n ArrayList
       while( rs.next() ) {
         Mensaje m = new Mensaje( rs.getString("remitente"), rs.getString("destinatario"), rs.getString("texto"));
         mensajes.add( m );
@@ -70,7 +70,7 @@ public class Operaciones {
       st = cn.createStatement();
       String tsql;
       // A partir de los datos del mensaje construye
-      // la cadena SQL para realizar su inserión
+      // la cadena SQL para realizar su insersiÃ³n
       tsql = "Insert into mensajes values( '";
       tsql += m.getDestino()+ "','" + m.getRemite() + "','" + m.getTexto() + "')";
       st.execute( tsql );
