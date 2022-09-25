@@ -23,6 +23,12 @@
   <textarea name="texto" rows="10" cols="60">
      ... Escribe tu mensaje aqui ...
   </textarea>
+  <br/>
+      Fecha :<br/>
+  <textarea readonly name="fecha" rows="3" cols="15">
+    <%java.text.DateFormat df = new java.text.SimpleDateFormat("dd/MM/yyyy"); %>
+    <%= df.format(new java.util.Date()).toString()%>
+  </textarea>
   <hr/><br/>
   <input type="submit" name="Submit" value="Enviar">
   <input type="reset" value="Reset">

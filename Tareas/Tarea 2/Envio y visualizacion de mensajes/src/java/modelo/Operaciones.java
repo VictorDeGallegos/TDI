@@ -56,6 +56,7 @@ public class Operaciones {
         m.setDestino( rs.getString( "destinatario" ) );
         m.setRemite( rs.getString( "remitente" ) );
         m.setTexto( rs.getString( "texto" ) );
+        m.setFecha( rs.getString("fecha"));
         mensajes.add( m );
       }
       cn.close();
@@ -75,7 +76,7 @@ public class Operaciones {
       // A partir de los datos del mensaje construye
       // la cadena SQL para realizar su insersión
       tsql = "Insert into mensajes values( '";
-      tsql += m.getDestino()+ "','" + m.getRemite() + "','" + m.getTexto() + "')";
+      tsql += m.getDestino()+ "','" + m.getRemite() + "','" + m.getTexto() + "','" + m.getFecha() + "')";
       st.execute( tsql );
       cn.close();
     }
@@ -93,7 +94,7 @@ public class Operaciones {
       String tsql;
       // A partir de los datos del mensaje construye
       // la cadena SQL para realizar su eliminación
-      tsql = "Delete from mensajes where destinatario = '" + m.getDestino() + "' and remitente = '" + m.getRemite() + "' and texto = '" + m.getTexto() + "'";
+      tsql = "Delete from mensajes where destinatario = '" + m.getDestino() + "' and remitente = '" + m.getRemite() + "' and texto = '" + m.getTexto() + "' and fecha = '" + m.getFecha() + "'";
       st.execute( tsql );
       cn.close();
     }
