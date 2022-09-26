@@ -41,19 +41,20 @@ public class Operaciones {
     Connection cn = null;
     ArrayList mensajes = null;
     Statement st;
-    ResultSet rs;
+    ResultSet rs; 
     try {
       cn = getConnection();
       st = cn.createStatement();
       String tsql;
-      tsql = "select * from mensajes where destinatario = '" + destino + "'";
+      tsql = "select * from mensajes where ario = '" + destino + "'";
       rs = st.executeQuery( tsql );
       mensajes = new ArrayList();
       // Para cada mensaje encontrado crea un objeto
       // Mensaje y lo añade a la colección ArrayList
       while( rs.next() ) {
         Mensaje m = new Mensaje();
-        m.setDestino( rs.getString( "destinatario" ) );
+        m.setDestino( rs.getString( "Destintario" ) );
+        m.setDestino( rs.getString( "Destintario" ) );
         m.setRemite( rs.getString( "remitente" ) );
         m.setTexto( rs.getString( "texto" ) );
         m.setFecha( rs.getString("fecha"));
@@ -83,6 +84,8 @@ public class Operaciones {
     catch( Exception e ) { e.printStackTrace(); }
   }
 
+  
+
   //Elimina un mensaje de la base de datos al presionar el boton eliminar con la imagen Borrar_mail.png
   public void borrarMensaje( Mensaje m ) {
     Connection cn;
@@ -94,7 +97,7 @@ public class Operaciones {
       String tsql;
       // A partir de los datos del mensaje construye
       // la cadena SQL para realizar su eliminación
-      tsql = "Delete from mensajes where destinatario = '" + m.getDestino() + "' and remitente = '" + m.getRemite() + "' and texto = '" + m.getTexto() + "' and fecha = '" + m.getFecha() + "'";
+      tsql = "Delete from mensajes where ario = '" + m.getDestino() + "' and remitente = '" + m.getRemite() + "' and texto = '" + m.getTexto() + "' and fecha = '" + m.getFecha() + "'";
       st.execute( tsql );
       cn.close();
     }
