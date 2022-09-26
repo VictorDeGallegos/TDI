@@ -17,6 +17,8 @@
   <b>Datos del mensaje :</b><br/><br/>
      Introduzca el destinatario :  <input type="text" name="destino"><br/>
   <br/>
+     Introduzca otro destinatario : <input type="text" name="destino"><br/>
+  <br/>
      Introduzca el remitente :  <input type="text" name="remite"><br/>
   <br/>
      Introduzca el texto : <br/>
