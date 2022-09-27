@@ -46,15 +46,14 @@ public class Operaciones {
       cn = getConnection();
       st = cn.createStatement();
       String tsql;
-      tsql = "select * from mensajes where ario = '" + destino + "'";
+      tsql = "select * from mensajes where destinatario = '" + destino + "'";
       rs = st.executeQuery( tsql );
       mensajes = new ArrayList();
       // Para cada mensaje encontrado crea un objeto
       // Mensaje y lo añade a la colección ArrayList
       while( rs.next() ) {
         Mensaje m = new Mensaje();
-        m.setDestino( rs.getString( "Destintario" ) );
-        m.setDestino( rs.getString( "Destintario" ) );
+        m.setDestino( rs.getString( "destinatario" ) );
         m.setRemite( rs.getString( "remitente" ) );
         m.setTexto( rs.getString( "texto" ) );
         m.setFecha( rs.getString("fecha"));
@@ -97,7 +96,7 @@ public class Operaciones {
       String tsql;
       // A partir de los datos del mensaje construye
       // la cadena SQL para realizar su eliminación
-      tsql = "Delete from mensajes where ario = '" + m.getDestino() + "' and remitente = '" + m.getRemite() + "' and texto = '" + m.getTexto() + "' and fecha = '" + m.getFecha() + "'";
+      tsql = "delete from mensajes where destinatario = '" + m.getDestino() + "' and remitente = '" + m.getRemite() + "' and texto = '" + m.getTexto() + "'";
       st.execute( tsql );
       cn.close();
     }

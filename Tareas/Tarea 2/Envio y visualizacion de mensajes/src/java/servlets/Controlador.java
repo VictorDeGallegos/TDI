@@ -23,9 +23,10 @@ public class Controlador extends HttpServlet {
       response.sendRedirect( "envio.jsp" );
     // Grabación de un mensaje
     if ( op.equals( "grabar" ) ) {
-      Mensaje men = (Mensaje)request.getAttribute( "mensa" );
+      MensajeConCopia msjcopia = (MensajeConCopia)request.getAttribute( "mensa" );
       Operaciones oper = new Operaciones( request );
-      oper.grabaMensaje( men );
+      oper.grabaMensaje( msjcopia.getMensaje() );
+      oper.grabaMensaje(msjcopia.getMensajeCopia());
       response.sendRedirect( "inicio.htm" );
     }
     // Acceso a la página de solicitud de mensajes
@@ -41,10 +42,14 @@ public class Controlador extends HttpServlet {
     }
     //Borrado de un mensajes al oprimir Borrar_mail.png
     if ( op.equals( "borrar" ) ) {
-      Mensaje men = (Mensaje)request.getAttribute( "mensa" );
+      //Mensaje men = (Mensaje)request.getAttribute( "mensa" );
       Operaciones oper = new Operaciones( request );
-      oper.borrarMensaje( men );
-      response.sendRedirect( "/ver.jsp" );
+      String destino = request.getParameter("destinatario");
+      String remite = request.getParameter("remitente");
+      String texto = request.getParameter("texto");
+      String fecha = "";
+      oper.borrarMensaje( new Mensaje(remite, destino, texto, fecha) );
+      response.sendRedirect( "inicio.htm" );
     }
   }
 }
