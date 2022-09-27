@@ -20,7 +20,14 @@ if( mensajes != null )
     Mensaje m = (Mensaje)mensajes.get(i);
     if (( m.getDestino()).equalsIgnoreCase( nombre )) {
       men = true;%>
-<tr><td><%= m.getRemite()%></td><td><%= m.getTexto()%></td><td><%= m.getFecha()%></td><td><a href="borrar.jsp?nombre=<%=nombre%>&remite=<%=m.getRemite()%>&texto=<%=m.getTexto()%>"> <img style="width: 25px; height: 25px;" src="images/Borrar_mail.png"></a></td></tr>
+<tr>
+    <td><%= m.getRemite()%></td>
+    <td><%= m.getTexto()%></td>
+    <td><%= m.getFecha()%></td>
+    <td><a href="controlador?operacion=borrar&destinatario=<%=nombre%>&remitente=<%=m.getRemite()%>&texto=<%=m.getTexto()%>">
+        <img style="width: 25px; height: 25px;" src="images/Borrar_mail.png">
+    </a></td>
+</tr>
     <%}
   }
 if ( !men ) {%>

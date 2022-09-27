@@ -3,7 +3,7 @@
     <title>Envio de Mensajes</title>
   </head>
 <!-- Captura de datos e insercion en el Javabean: -->
-<jsp:useBean id="mensa" scope="request" class="javabeans.Mensaje" />
+<jsp:useBean id="mensa" scope="request" class="javabeans.MensajeConCopia" />
 <jsp:setProperty name="mensa" property="*"/>
 <% if ( request.getParameter("texto") != null ){%>
    <jsp:forward page="controlador?operacion=grabar"/>
@@ -17,7 +17,7 @@
   <b>Datos del mensaje :</b><br/><br/>
      Introduzca el destinatario :  <input type="text" name="destino"><br/>
   <br/>
-     Introduzca otro destinatario : <input type="text" name="destino"><br/>
+     Copia para : <input type="text" name="copia"><br/>
   <br/>
      Introduzca el remitente :  <input type="text" name="remite"><br/>
   <br/>
