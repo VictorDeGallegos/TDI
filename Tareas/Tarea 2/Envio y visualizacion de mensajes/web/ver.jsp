@@ -7,7 +7,7 @@
 <center>    
 <%String nombre = request.getParameter( "nombre" );%>
 <h1>
-  Mensajes para <%= nombre %>
+  Mensajes para <%= (nombre == null)?"Desconocido":nombre %>
 </h1>
 <table border=1>
     <tr><th>Remitente</th><th>Mensaje</th><th>Fecha</th><th>Borrar</th></tr>
@@ -21,9 +21,9 @@ if( mensajes != null )
     if (( m.getDestino()).equalsIgnoreCase( nombre )) {
       men = true;%>
 <tr>
-    <td><%= m.getRemite()%></td>
-    <td><%= m.getTexto()%></td>
-    <td><%= m.getFecha()%></td>
+    <td><%= (m.getRemite() == null || m.getRemite().equals("null"))?"Sin remitente":m.getRemite()%></td>
+    <td><%= (m.getTexto() == null || m.getTexto().equals("null"))?"Sin texto para mostrar":m.getTexto()%></td>
+    <td><%= (m.getFecha() == null || m.getFecha().equals("null"))?"Sin fecha":m.getFecha()%></td>
     <td><a href="controlador?operacion=borrar&destinatario=<%=nombre%>&remitente=<%=m.getRemite()%>&texto=<%=m.getTexto()%>">
         <img style="width: 25px; height: 25px;" src="images/Borrar_mail.png">
     </a></td>
