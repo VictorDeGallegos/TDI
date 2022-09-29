@@ -5,15 +5,17 @@ public class Mensaje {
   private String remite;
   private String destino;
   private String texto;
+  private String fecha;
 
   public Mensaje() {}
   // Constructor que permite crear un objeto
   // Mensaje a partir de los datos del mismo
 
-  public Mensaje( String remite, String destino, String texto ) {
+  public Mensaje( String remite, String destino, String texto, String fecha ) {
     this.remite = remite;
     this.destino = destino;
     this.texto = texto;
+    this.fecha = fecha;
   }
 
   public void setRemite( String remite ) {
@@ -38,5 +40,13 @@ public class Mensaje {
 
   public String getTexto() {
     return this.texto;
+  }
+  
+  public void setFecha( String fecha) {
+      this.fecha = fecha;
+  }
+  
+  public String getFecha() {
+      return this.fecha;
   }
 }

@@ -7,25 +7,32 @@
 <center>    
 <%String nombre = request.getParameter( "nombre" );%>
 <h1>
-  Mensajes para <%= nombre %>
+  Mensajes para <%= (nombre == null)?"Desconocido":nombre %>
 </h1>
 <table border=1>
-<tr><th>Remitente</th><th>Mensaje</th></tr>
+    <tr><th>Remitente</th><th>Mensaje</th><th>Fecha</th><th>Borrar</th></tr>
 <%boolean men = false;
 ArrayList mensajes = (ArrayList)request.getAttribute( "mensajes" );
 if( mensajes != null )
   // Si existen mensajes para ese destinatario,
-  // se generará una tabla con los mismos:
+  // se generarï¿½ una tabla con los mismos:
   for( int i=0; i<mensajes.size(); i++ ) {
     Mensaje m = (Mensaje)mensajes.get(i);
     if (( m.getDestino()).equalsIgnoreCase( nombre )) {
       men = true;%>
-      <tr><td><%= m.getRemite()%></td><td><%= m.getTexto()%></td></tr>
+<tr>
+    <td><%= (m.getRemite() == null || m.getRemite().equals("null"))?"Sin remitente":m.getRemite()%></td>
+    <td><%= (m.getTexto() == null || m.getTexto().equals("null"))?"Sin texto para mostrar":m.getTexto()%></td>
+    <td><%= (m.getFecha() == null || m.getFecha().equals("null"))?"Sin fecha":m.getFecha()%></td>
+    <td><a href="controlador?operacion=borrar&destinatario=<%=nombre%>&remitente=<%=m.getRemite()%>&texto=<%=m.getTexto()%>">
+        <img style="width: 25px; height: 25px;" src="images/Borrar_mail.png">
+    </a></td>
+</tr>
     <%}
   }
 if ( !men ) {%>
-    <!-- Si no hay mensajes se envía al usuario
-    a la página de nomensajes.jsp -->
+    <!-- Si no hay mensajes se envï¿½a al usuario
+    a la pï¿½gina de nomensajes.jsp -->
     <jsp:forward page="nomensajes.jsp"/>
 <%}%>
 </table>
