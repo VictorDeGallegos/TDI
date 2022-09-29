@@ -1,14 +1,14 @@
 # Tarea 2 - Envío y visualización de mensajes 💬
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
-![Status badge](https://img.shields.io/badge/status-en%20progreso-yellow?style=for-the-badge)
+![Status badge](https://img.shields.io/badge/status-%20terminado-green?style=for-the-badge)
 
 ## Tecnologías para Desarrollos en Internet 2023-1 Universidad Nacional Autónoma de México (UNAM)
 
 > ---
 >
+> * **Juan Carlos Bautista Sandoval**  - [JuanBautistta](https://github.com/JuanBautistta)
 > * **Victor Hugo Gallegos Mota**  - [VictorDeGallegos](https://github.com/VictorDeGallegos)
 > * **José Demian Jiménez**  - [demian35](https://github.com/demian35)
-> * **Juan Carlos Bautista Sandoval**  - [JuanBautistta](https://github.com/JuanBautistta)
 >
 >
 >
@@ -30,7 +30,14 @@
     - [Seleccione el servidor GlassFish 4.1.1](#seleccione-el-servidor-glassfish-411)
     - [Ejecute el proyecto](#ejecute-el-proyecto)
     - [Ver el resultado en el navegador web](#ver-el-resultado-en-el-navegador-web)
-    - [Detener el servidor](#detener-el-servidor)
+  - [**Capturas de programa en funcionamiento 📸**](#capturas-de-programa-en-funcionamiento-)
+    - [BD original](#bd-original)
+    - [Envio de mensaje a 2 destinatarios con fecha actual](#envio-de-mensaje-a-2-destinatarios-con-fecha-actual)
+    - [Consultar mensajes](#consultar-mensajes)
+    - [BD Actualizada](#bd-actualizada)
+    - [Eliminar mensajes](#eliminar-mensajes)
+    - [Mensajes originales(sin fecha)](#mensajes-originalessin-fecha)
+  - [Detener el servidor](#detener-el-servidor)
   - [Expresiones de Gratitud 🎁](#expresiones-de-gratitud-)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -77,6 +84,8 @@ Seleccionar el servidor GlassFish 4.1.1 que se descargo al princio del proyecto.
 
 ### Ejecute el proyecto
 
+Si existe algun error al ejecutar el proyecto, realizar un `Clean and Build` y posteriormente `Run Project`.
+
 <img width="1338" alt="Run project" src="https://user-images.githubusercontent.com/41756950/192113742-fdf21ff7-787b-447d-b484-467af70e11a6.png">
 
 ### Ver el resultado en el navegador web
@@ -90,7 +99,60 @@ http://localhost:8080
 <img width="812" alt="localhost 8080" src="https://user-images.githubusercontent.com/41756950/192113793-0a0c2912-c014-4b9c-a3eb-3c9c2c983ad1.png">
 
 
-### Detener el servidor
+## **Capturas de programa en funcionamiento 📸**
+
+### BD original
+Despues de Desplegar la aplicación en el navegador web
+
+Podemos consultar la base de datos del programa para ver como cambia en el transcurso de su ejecucion, la tabla al principio contiene estos registros nosotros usamos la app de [MDB ACCDB VIWER](https://macdownload.informer.com/mdb-accdb-viewer/download/ ) para consultar la base de datos
+
+![Base de datos original](https://cdn.discordapp.com/attachments/1009440948662571018/1024853868103860277/Captura_de_Pantalla_2022-09-28_a_las_8.23.18_p.m..png)
+
+### Envio de mensaje a 2 destinatarios con fecha actual
+
+Posteriormente nos dirigimos a la ruta `http://localhost:8080/inicio.htm` podremos ir a la opcion de *Enviar mensaje*
+
+En este caso enviaremos el mensaje `Hola chicos vamos a codear` a dos destinatarios:
+* victor
+* demian
+  
+Y nuestro remitente sera juan con la fecha actualización
+
+<img width="812" alt="Enviar  mensaje" src="https://user-images.githubusercontent.com/41756950/192920433-cc32ed86-2c1d-4b60-8f08-f91675d57006.png">
+
+### Consultar mensajes
+
+Despues enviar el mensaje corroboramos que llegue a los dos detinos con la fecha del mensaje y la opcion para eliminarlo:
+
+* **Victor**:
+  <img width="812" alt="Mensajes de Victor" src="https://user-images.githubusercontent.com/41756950/192920806-d61b3524-9696-4781-87ed-fe3492002b15.png">
+
+* **Demian**:
+  <img width="812" alt="Mensajes de Demian" src="https://user-images.githubusercontent.com/41756950/192920967-465180f0-84f0-420f-b9d8-b03ea7eeff94.png">
+
+### BD Actualizada
+
+En este punto podemos consultar la base de datos nuevamente para ver que los registros se guardaron exitosamente
+
+<img width="1012" alt="Base actualizada" src="https://user-images.githubusercontent.com/41756950/192923020-1bc9509b-8706-4349-a368-d77f138a860e.png">
+
+### Eliminar mensajes
+
+Una vez consultados los mensajes procedemos a eliminarlos oprimiendo el icono del bote 🗑 para probar su funcionamiento, el resultado despues de consultar los mensajes es el siguiente:
+
+* **Victor:**
+<img width="812" alt="Mensajes de victtor eliminados" src="https://user-images.githubusercontent.com/41756950/192921276-c5c2eb17-6215-4625-95ec-005eac6144eb.png">
+
+* **Demian:**
+<img width="812" alt="Mensajes eliminados demian" src="https://user-images.githubusercontent.com/41756950/192921542-18ff4909-b75d-4fcb-812d-5386f321161f.png">
+
+### Mensajes originales(sin fecha)
+
+Y por ultimo si deseamos consultar algun mensaje de algun registro creado por el profesor, podemos visulizar que no contienen fecha pues a este punto no se habia implementado aun ese caso de uso:
+
+<img width="812" alt="Mensajes de Daniela" src="https://user-images.githubusercontent.com/41756950/192921784-93f62e87-1387-4859-85ba-3983ff81aa6c.png">
+
+## Detener el servidor
 Vaya a la pestaña "Servicios" en el lado izquierdo de la pantalla (si no es visible, primero seleccione la ventana / Servicios del menú, o presione CTRL + 5)
 
 <img width="812" alt="Captura de Pantalla 2022-09-24 a la(s) 1 55 24 p m" src="https://user-images.githubusercontent.com/41756950/192114228-0e032be0-f0e6-4944-a883-0e7cdc07f58e.png">
@@ -98,7 +160,6 @@ Vaya a la pestaña "Servicios" en el lado izquierdo de la pantalla (si no es vis
 Seleccionar la pestaña "Servidores" y detener el servidor GlassFish
 
 <img width="812" alt="Captura de Pantalla 2022-09-24 a la(s) 2 00 38 p m" src="https://user-images.githubusercontent.com/41756950/192114394-bdb0fbf5-f643-4128-8838-a3b40b34e6d8.png">
-
 
 ## Expresiones de Gratitud 🎁
 
