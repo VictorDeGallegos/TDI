@@ -7,14 +7,10 @@
   <title>Pagina correcta</title>
 </head>
 <body>
-  Detalle del Usuario
+  Detalle del Mensaje
   <hr>
-  Nombre Usuario   	: ${user.nombre} <br/>
-  Edad        	    : ${user.edad} <br/>  
-  Genero      		: ${user.genero} <br/>
-  Pais     			: ${user.pais} <br/>
-  Sobre ti   		: ${user.sobreTi} <br/>
-  Comunidad   		: ${user.comunidad[0]}  ${user.comunidad[1]} ${user.comunidad[2]}<br/>
-  Lista Correo		: ${user.listaCorreo} 
+  Nombre Usuario   	: ${msg.remitente} <br/>
+  Edad        	    : ${msg.mensaje} <br/>  
+  Genero      		: ${msg.fecha} <br/>
 </body>
 </html>
