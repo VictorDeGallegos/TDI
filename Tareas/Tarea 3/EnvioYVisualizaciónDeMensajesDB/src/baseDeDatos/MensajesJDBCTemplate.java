@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.sql.PreparedStatement;
 import javax.naming.NamingException;
 
@@ -46,38 +48,35 @@ public class MensajesJDBCTemplate {
      	    return connect ;
          }          
    }
-    
-   public void insertarU( Mensaje msg ) throws NamingException 
 
-	   {
+   public void insertarMensaje( Mensaje msg ) throws NamingException {
 	        Connection connect = null;
 	        Statement statement = null;
-	        try 
-	        {
+	        try {
 	            connect = getConexion();
 	            statement = connect.createStatement();
-
-	   		   
-	            
-	            // String query= "insert into Usuario (nombre, edad, password, genero, pais, about, comunidad, lista) values ('"+msg.getNombre()+"', '"+msg.getEdad()+"', '"+SHA1(msg.getPassword() )+"','"+msg.getGenero()+"' ,"+msg.getPais() +", '"+msg.getSobreTi()+"', '"+Comunidades+"',"+msg.getListaCorreo()+" );";
-	            //statement.executeUpdate(query);
-	   		    
-	            String sql = "insert into Mensaje ( remitente, mensaje, fecha) values (?, ?, ?)";
+	            String sql = "insert into mensajes ( id, destinatarioa,destinatariob,remitente, mensaje, fecha) values (?, ?, ?, ?, ?, ?)";
 	            PreparedStatement ps = connect.prepareStatement( sql );
-	            ps.setString( 1, msg.getRemitente() );
-	            ps.setString( 2, msg.getMensaje() );
-	            ps.setString( 3,msg.getFecha() );
+	            ps.setInt( 1, msg.getId() );
+				ps.setString( 2, msg.getDestinatarioa() );
+	            ps.setString( 3, msg.getDestinatariob() );
+				ps.setString( 4, msg.getRemitente() );
+	            ps.setString( 5, msg.getMensaje() );
+	            ps.setString( 6,msg.getFecha() );
 	            ps.executeUpdate();
-	        }
-	        catch (SQLException error) 
-	          { 
+	        } catch (SQLException error) { 
 	        	System.out.println( error.toString() );
-	          } finally {
-	            
-	            try { statement.close(); } 
-	              catch (SQLException error) { System.out.println( "Error Statement : " + error.toString()); }
-	            try { connect.close(); } 
-	              catch (SQLException error) { System.out.println ("Error Connect :" + error.toString()); }
+	        } finally {
+	            try { 
+					statement.close();
+				}catch (SQLException error) { 
+					System.out.println( "Error Statement : " + error.toString()); 
+				}
+				try { 
+					connect.close(); 
+				}catch (SQLException error) { 
+					System.out.println ("Error Connect :" + error.toString()); 
+				}
 	        }		   
 	   }
 	  
@@ -114,7 +113,7 @@ public class MensajesJDBCTemplate {
 	        return intentos;
 	     }
 	   
-	/*   public void addIntento( String IP ) {
+	  public void addIntento( String IP ) {
 		   
 	        Connection connect = null;
 	        PreparedStatement ps = null;
@@ -185,7 +184,7 @@ public class MensajesJDBCTemplate {
 	        	try { ps.close(); } catch (SQLException error) { System.out.println("Error Connect :"+error.toString()); }
 	            try { connect.close(); } catch (SQLException error) { System.out.println("Error Connect :"+error.toString()); }
 	          }
-		 } */ 
+		 } 
 	   
 	  
 }

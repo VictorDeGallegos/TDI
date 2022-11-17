@@ -25,6 +25,22 @@
 			</td>		 
 		</tr>
 		<tr>
+			<td>Introduzca un destinatario:</td>
+			
+		</tr>
+		<tr>
+			<td><form:input path="destinatarioa" /></td>
+			<td><form:errors path="destinatarioa" cssClass="error" /></td>
+		</tr>		
+		<tr>
+			<td>Copia para:</td>
+			
+		</tr>
+		<tr>
+			<td><form:input path="destinatariob" /></td>
+			<td><form:errors path="destinatariob" cssClass="error" /></td>
+		</tr>	
+		<tr>
 			<td>Nombre Remitente:</td>
 			
 		</tr>

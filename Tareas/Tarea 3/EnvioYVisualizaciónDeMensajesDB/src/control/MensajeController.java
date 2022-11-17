@@ -21,37 +21,32 @@ import validator.MensajeValidator;
 @SessionAttributes("msg")
 
 public class MensajeController {
+
 	private MensajeService msgService;
 	private MensajeValidator msgValidator;
  
 	@Autowired
-	public MensajeController( MensajeService msgService, MensajeValidator msgValidator ) {
+	public MensajeController( MensajeService msgService, MensajeValidator msgValidator ) { // metodo contructor
 		this.msgService = msgService;
 		this.msgValidator = msgValidator;
 	}
 	 
-	@RequestMapping( method = RequestMethod.GET )
+	@RequestMapping( method = RequestMethod.GET ) //metodo get
 	public String showUserForm( ModelMap model, HttpServletRequest request ) {
 		Mensaje msg = new Mensaje();
 		model.addAttribute( "msg", msg );
 		return "msgForm";
 	}
 
-	@RequestMapping( method = RequestMethod.POST )
-	public String onSubmit( @ModelAttribute("msg") Mensaje msg, BindingResult result , HttpServletRequest request ) {
+	@RequestMapping( method = RequestMethod.POST ) // metodo post
+	public String onSubmit( @ModelAttribute("msg") Mensaje msg, BindingResult result , HttpServletRequest request ) 
+	{
 		msgValidator.validate( msg, result );
-		if ( result.hasErrors() ) 
+		if ( result.hasErrors() ) {
 			return "msgForm";
-	   else {
-			
-			String formulario = "";
-			final String msgIpAddress = request.getRemoteAddr();
-	        System.out.println( "Mensaje IpAddress: " + msgIpAddress );
-	        MensajesJDBCTemplate reg = new MensajesJDBCTemplate();
-	        msgService.add( msg );
-        	formulario = "redirect:msgSuccess.htm";
-			return formulario;
-		 }
+		}
+		msgService.add( msg );
+		return "msgSuccess";
 	}
 }
 

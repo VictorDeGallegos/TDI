@@ -9,8 +9,10 @@
 <body>
   Detalle del Mensaje
   <hr>
-  Nombre Usuario   	: ${msg.remitente} <br/>
-  Edad        	    : ${msg.mensaje} <br/>  
-  Genero      		: ${msg.fecha} <br/>
+  Nombre Destinatario  	: ${msg.destinatarioa} <br/>
+  Copia para 	: ${msg.destinatariob} <br/>
+  Nombre Remitente  	: ${msg.remitente} <br/>
+  Mensaje 	    : ${msg.mensaje} <br/>  
+  Fecha     		: ${msg.fecha} <br/>
 </body>
 </html>
