@@ -12,8 +12,8 @@
     
     <context:component-scan base-package="control" />
     
-    <bean id="userService" class="servicio.UserServiceImpl" />
+    <bean id="msgService" class="servicio.MensajeServiceImpl" />
     
-    <bean id="userValidator" class="validator.UserValidator" />
+    <bean id="msgValidator" class="validator.MensajeValidator" />
          
 </beans>

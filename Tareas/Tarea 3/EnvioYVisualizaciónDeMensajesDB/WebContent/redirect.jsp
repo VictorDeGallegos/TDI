@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <% response.sendRedirect("userRegistration.htm"); %>
+   <% response.sendRedirect("msgRegistration.htm"); %>
 </body>
 </html>
