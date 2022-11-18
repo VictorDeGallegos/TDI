@@ -9,8 +9,6 @@
 <body>
   Detalle del Mensaje
   <hr>
-  Nombre Destinatario  	: ${msg.destinatarioa} <br/>
-  Copia para 	: ${msg.destinatariob} <br/>
   Nombre Remitente  	: ${msg.remitente} <br/>
   Mensaje 	    : ${msg.mensaje} <br/>  
   Fecha     		: ${msg.fecha} <br/>

@@ -10,8 +10,6 @@ public class MensajeServiceImpl implements MensajeService{
 	public void add(Mensaje msg) {
 		
 		System.out.println( "Mensaje enviado con exito:" );
-		System.out.println( "Destinatario: " + msg.getDestinatarioa() );
-		System.out.println( "Copia para: " + msg.getDestinatariob() );
 		System.out.println( "Remitente: " + msg.getRemitente() );
 		System.out.println( "Mensaje: " + msg.getMensaje() );
 		System.out.println( "fecha: " + msg.getFecha() );

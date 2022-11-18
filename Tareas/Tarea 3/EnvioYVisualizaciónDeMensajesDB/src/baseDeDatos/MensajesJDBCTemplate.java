@@ -55,14 +55,12 @@ public class MensajesJDBCTemplate {
 	        try {
 	            connect = getConexion();
 	            statement = connect.createStatement();
-	            String sql = "insert into mensajes ( id, destinatarioa,destinatariob,remitente, mensaje, fecha) values (?, ?, ?, ?, ?, ?)";
+	            String sql = "insert into mensajes ( id, remitente, mensaje, fecha) values (?, ?, ?, ?)";
 	            PreparedStatement ps = connect.prepareStatement( sql );
 	            ps.setInt( 1, msg.getId() );
-				ps.setString( 2, msg.getDestinatarioa() );
-	            ps.setString( 3, msg.getDestinatariob() );
-				ps.setString( 4, msg.getRemitente() );
-	            ps.setString( 5, msg.getMensaje() );
-	            ps.setString( 6,msg.getFecha() );
+				ps.setString( 2, msg.getRemitente() );
+	            ps.setString( 3, msg.getMensaje() );
+	            ps.setString( 4,msg.getFecha() );
 	            ps.executeUpdate();
 	        } catch (SQLException error) { 
 	        	System.out.println( error.toString() );

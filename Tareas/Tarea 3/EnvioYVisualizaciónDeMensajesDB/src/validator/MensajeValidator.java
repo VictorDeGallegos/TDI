@@ -29,10 +29,6 @@ public class MensajeValidator implements Validator {
 	public void validate( Object target, Errors errors ) {
 
 
-		ValidationUtils.rejectIfEmptyOrWhitespace( errors, "destinatarioa",
-				"destinatarioa.required" );
-		ValidationUtils.rejectIfEmptyOrWhitespace( errors, "destinatariob",
-				"destinatariob.required" );		
 		ValidationUtils.rejectIfEmptyOrWhitespace( errors, "remitente",
 				"remitente.required" );
 		ValidationUtils.rejectIfEmptyOrWhitespace( errors, "mensaje",
@@ -58,10 +54,6 @@ public class MensajeValidator implements Validator {
 		boolean error = false;
 		for( int i=0; i<pReservadas.length; i++)
 		  {	 
-			if( msg.getDestinatarioa().contains(pReservadas[i] ))
-			  	error = true;
-			if( msg.getDestinatariob().contains(pReservadas[i] ))
-			  	error = true;
 			if( msg.getRemitente().contains(pReservadas[i] ))
 			  	error = true;			  
 			if( msg.getMensaje().contains(pReservadas[i] ))

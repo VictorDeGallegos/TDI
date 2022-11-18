@@ -3,8 +3,6 @@ package dominio;
 public class Mensaje {
 
 	private int id;
-	private String destinatarioa;
-	private String destinatariob;
 	private String remitente;
 	private String mensaje;
 	private String fecha;
@@ -17,21 +15,6 @@ public class Mensaje {
 		this.id = id;
 	}
 
-	public String getDestinatarioa() {
-		return this.destinatarioa;
-	}
-
-	public void setDestinatarioa(String destinatarioa) {
-		this.destinatarioa = destinatarioa;
-	}
-
-	public String getDestinatariob() {
-		return this.destinatariob;
-	}
-
-	public void setDestinatariob(String destinatariob) {
-		this.destinatariob = destinatariob;
-	}
 	
 
 	public String getRemitente() {
