@@ -23,7 +23,23 @@
 			    <h1>Envio de mensajes</h1>
 			  </center>
 			</td>		 
-		</tr>	
+		</tr>
+		<tr>
+			<td>Destinatario:</td>
+			
+		</tr>
+		<tr>
+			<td><form:input path="destinatario" /></td>
+			<td><form:errors path="destinatario" cssClass="error" /></td>
+		</tr>		
+		<tr>
+			<td>Copia:</td>
+			
+		</tr>
+		<tr>
+			<td><form:input path="copia" /></td>
+			<td><form:errors path="copia" cssClass="error" /></td>
+		</tr>			
 		<tr>
 			<td>Nombre Remitente:</td>
 			
