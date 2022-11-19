@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <% response.sendRedirect("msgRegistration.htm"); %>
+   <% response.sendRedirect("eleccionPage.htm"); %>
 </body>
 </html>
