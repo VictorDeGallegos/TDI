@@ -101,6 +101,18 @@ Ejecutamos el servidor para obtner lasiguiente imagen en pantalla
 
 ### Capturas en ejecucion
 
+Imagen de la pagina principal
+
+![primerpagina](https://user-images.githubusercontent.com/54485680/202861490-ddc40650-613d-4e84-a053-969dad85781b.jpg)
+
+Imagen de registro de mensaje
+
+![segundapagina](https://user-images.githubusercontent.com/54485680/202861548-d6463cb6-b884-43c6-bb9b-1d0aafcbfe93.jpg)
+
+Imagen de registro exitoso
+
+![tercerpagina](https://user-images.githubusercontent.com/54485680/202861578-94a70cea-d46e-4eb4-bea3-ae5186ab1159.jpg)
+
 ## Expresiones de Gratitud 🎁
 
 * Comenta a otros sobre este proyecto 📢
