@@ -22,6 +22,7 @@ Repositorio correspondiente a la asignatura de Tecnologías para Desarrollos en 
 * [Tareas]()
   * [Tarea 1](https://github.com/VictorDeGallegos/TDI/blob/main/Tareas/Tarea%201/Tarea%201.pdf)
   * [Tarea 2](https://github.com/VictorDeGallegos/TDI/tree/main/Tareas/Tarea%202/Envio%20y%20visualizacion%20de%20mensajes)
+  * [Tarea 3](https://github.com/VictorDeGallegos/TDI/tree/main/Tareas/Tarea%203/EnvioYVisualizaci%C3%B3nDeMensajesDB)
 * [Proyectos]()
 
 ## Expresiones de Gratitud 🎁
