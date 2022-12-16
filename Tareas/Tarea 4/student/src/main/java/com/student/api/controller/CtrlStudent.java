@@ -1,14 +1,19 @@
-package com.tarea4.controller;
+package com.student.api.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.tarea4.entity.UserDtls;
+import com.student.api.entity.Student;
+import com.student.api.service.SvcStudent;
 
 @Controller
-public class UserController {
+public class CtrlStudent {
+    
+    @Autowired
+    SvcStudent svc;
 
     @GetMapping("/")
     public String index() {
@@ -16,8 +21,9 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute UserDtls userDtls) {
-        System.out.println(userDtls);
+    public String createStudent(@ModelAttribute Student in) {
+        System.out.println(in);
+        svc.createStudent(in);
         return "redirect:/";
     }
 

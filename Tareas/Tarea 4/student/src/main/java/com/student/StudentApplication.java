@@ -1,13 +1,13 @@
-package com.tarea4.FormStudentValidation;
+package com.student;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FormStudentValidationApplication {
+public class StudentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FormStudentValidationApplication.class, args);
+		SpringApplication.run(StudentApplication.class, args);
 	}
 
 }
