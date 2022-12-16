@@ -6,25 +6,36 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.student.api.entity.Horario;
 import com.student.api.entity.Student;
+import com.student.api.service.SvcHorario;
 import com.student.api.service.SvcStudent;
 
 @Controller
 public class CtrlStudent {
     
     @Autowired
-    SvcStudent svc;
+    SvcStudent svcStudent;
+
+    @Autowired
+    SvcHorario svcHorario;
 
     @GetMapping("/")
     public String index() {
         return "index";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/register-student")
     public String createStudent(@ModelAttribute Student in) {
-        System.out.println(in);
-        svc.createStudent(in);
+        svcStudent.createStudent(in);
         return "redirect:/";
     }
+
+    @PostMapping("/register-horario")
+    public String createHorario(@ModelAttribute Horario in) {
+        svcHorario.createHorario(in);
+        return "horario registrado";
+    }
+
 
 }
