@@ -17,11 +17,12 @@
   <body>
     <div class="container p-2">
       <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-8 offset-md-2">
           <div class="card">
             <div class="card-body">
               <h3 class="text-center">FormStudentValidation 📝</h3>
               <form th:action="@{/register}" th:object="${student}" method="post">
+              <form th:action="@{/register}" th:object="${horario}" method="post">
                 <!-- First name -->
                 <div class="form-group">
                   <label for="name">First Name:</label>
@@ -118,7 +119,7 @@
                 <!-- Firs attempt checkbox -->
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input type="hidden" name="firstAttempt" value="false"> 
+                    <input type="hidden" name="firstAttempt" value="false" />
                     <input class="form-check form-check-input" type="checkbox" id="firstattempt" name="firstAttempt" value="true" />
                     <label class="form-check form-check-label" for="firstattempt">First Attempt</label>
                   </div>
@@ -134,9 +135,71 @@
                     <option value="Computer Science">Computer Science</option>
                     <option value="Mathmatics">Mathmatics</option>
                   </select>
+                  <br />
+                  <h5 style="text-align: center">Horario asignado</h5>
+                  <!-- linea -->
+                  <hr />
+                  <!-- tabla de 5 x 6 -->
+                  <div class="form-group table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Materia</th>
+                          <th scope="col">Semestre</th>
+                          <th scope="col">Profesor</th>
+                          <th scope="col">Creditos</th>
+                          <th scope="col">Salón</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <!-- registrar en bd -->
+                          <td name="materia">Cálculo 1</td>
+                          <td name="semestre">1</td>
+                          <td name="profesor">Daniel</td>
+                          <td name="creditos">12</td>
+                          <td name="salon">P-103</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Álgebra 1</td>
+                          <td>2</td>
+                          <td>Gustavo</td>
+                          <td>10</td>
+                          <td>O-112</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Geometría</td>
+                          <td>1</td>
+                          <td>Martín</td>
+                          <td>10</td>
+                          <td>P-114</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">4</th>
+                          <td>Lógica</td>
+                          <td>3</td>
+                          <td>Andrés</td>
+                          <td>10</td>
+                          <td>P-118</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">5</th>
+                          <td>Programación</td>
+                          <td>4</td>
+                          <td>Sofía</td>
+                          <td>10</td>
+                          <td>O-123</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" style="float: right" class="btn btn-primary">Registrar</button>
               </form>
             </div>
           </div>
