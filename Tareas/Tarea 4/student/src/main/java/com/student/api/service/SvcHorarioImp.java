@@ -1,5 +1,7 @@
 package com.student.api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,10 @@ public class SvcHorarioImp implements SvcHorario{
         repo.save(in);
         return new ApiResponse("horario created");
     }
-    
+
+    public Horario getByMateria(String materia) {
+        return repo.findByMateria(materia);
+    }
+
+
 }

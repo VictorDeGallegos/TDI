@@ -79,4 +79,16 @@ public class Horario {
         this.salon = salon;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", materia='" + getMateria() + "'" +
+            ", semestre='" + getSemestre() + "'" +
+            ", profesor='" + getProfesor() + "'" +
+            ", creditos='" + getCreditos() + "'" +
+            ", salon='" + getSalon() + "'" +
+            "}";
+    }
+
 }

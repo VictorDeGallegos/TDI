@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.student.api.entity.Horario;
 import com.student.api.entity.Student;
+
 import com.student.api.service.SvcHorario;
 import com.student.api.service.SvcStudent;
 
@@ -19,6 +20,8 @@ public class CtrlStudent {
 
     @Autowired
     SvcHorario svcHorario;
+
+
 
     @GetMapping("/")
     public String index() {
@@ -37,5 +40,8 @@ public class CtrlStudent {
         return "horario registrado";
     }
 
-
+    @GetMapping("/getMateria")
+    public Horario getMateria(String materia) {
+        return svcHorario.getByMateria(materia);
+    }
 }
