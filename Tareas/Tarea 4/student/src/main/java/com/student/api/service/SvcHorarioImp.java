@@ -18,5 +18,10 @@ public class SvcHorarioImp implements SvcHorario{
         repo.save(in);
         return new ApiResponse("horario created");
     }
+
+    @Override
+    public Horario getByMateria(String materia) {
+        return repo.findByMateria(materia);
+    }
     
 }
