@@ -86,6 +86,18 @@ create table horario(
 );
 ```
 
+**TABLA COUNTRY:**
+
+```sql
+drop table if exists country;
+
+create table country(
+    id serial,
+    country varchar(100),
+    primary key (id)
+);
+```
+
 ### Ejecutar el programa
 
 Nosotros decidimos realizar nuestra implementacion en SpringBoot, se puede ejecutar el programa modificando el usuario, contraseña y nombre de la base de datos el archivo `student/src/main/resources/application.properties` de la siguiente forma (en mi caso fue asi)
