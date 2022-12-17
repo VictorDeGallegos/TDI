@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>FormStudentValidation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container p-2">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="text-center">FormStudentValidation 📝</h3>
+              <form th:action="@{/register-student}" th:object="${student}" method="post">
+              <form th:action="@{/register-horario}" th:object="${horario}" method="post">
+                <!-- First name -->
+                <div class="form-group">
+                  <label for="name">First Name:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="firstName"
+                    aria-describedby="nameHelp"
+                    placeholder="Enter first name"
+                    required
+                  />
+                </div>
+                <!-- Last Name -->
+                <div class="form-group">
+                  <label for="lastname">Last Name:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastname"
+                    name="lastName"
+                    aria-describedby="lastnameHelp"
+                    placeholder="Enter last name"
+                    required
+                  />
+                </div>
+                <!--Gender -->
+                <div class="form-group">
+                  <label for="gender">Gender: </label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" id="inLineRadio1" value="Male" />
+                    <label class="form-check-Label" for="inLineRdio1">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" id="inLineRadio2" value="Female" />
+                    <label class="form-check-Label" for="inLineRadio2">Female</label>
+                  </div>
+                </div>
+                <!-- Day of birth -->
+                <div class="form-group">
+                  <label for="dob">Day of birth:</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="dob"
+                    name="dateOfBirth"
+                    aria-describedby="dobHelp"
+                    placeholder="Enter day of birth"
+                    required
+                  />
+                </div>
+                <!-- Email -->
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                    required
+                  />
+                </div>
+                <!-- Section -->
+                <div class="form-group">
+                  <label for="section">Section: </label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="section" id="inLineRadio3" value="Graduate" />
+                    <label class="form-check-Label" for="inLineRdio1">Graduate</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="section" id="inLineRadio4" value="Post Graduate" />
+                    <label class="form-check-Label" for="inLineRadio2">Post Graduate</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="section" id="inLineRadio5" value="Research" />
+                    <label class="form-check-Label" for="inLineRadio2">Research</label>
+                  </div>
+                </div>
+                <!-- Lista de paises -->
+                <div class="form-group">
+                  <label for="country">Country:</label>
+                  <select class="custom-select" id="country" name="country">
+                    <option selected>Select a country</option>
+                    <option value="USA">USA</option>
+                    <option value="CANADA">CANADA</option>
+                    <option value="FRANCE">FRANCE</option>
+                    <option value="GERMANY">GERMANY</option>
+                    <option value="ITALY">ITALY</option>
+                    <option value="OTHER">OTHER</option>
+                  </select>
+                </div>
+                <!-- Firs attempt checkbox -->
+                <div class="form-group">
+                  <div class="form-check form-check-inline">
+                    <input type="hidden" name="firstAttempt" value="false" />
+                    <input class="form-check form-check-input" type="checkbox" id="firstattempt" name="firstAttempt" value="true" />
+                    <label class="form-check form-check-label" for="firstattempt">First Attempt</label>
+                  </div>
+                </div>
+                <!-- Subjects from StudentController.java -->
+                <div class="form-group">
+                  <label for="subjects">Subjects:</label>
+                  <select class="form-control" id="subjects" name="subjects" multiple>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Life Science">Life Science</option>
+                    <option value="Political Science">Political Science</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mathmatics">Mathmatics</option>
+                  </select>
+                  <br />
+                  <h5 style="text-align: center">Horario asignado</h5>
+                  <!-- linea -->
+                  <hr />
+                  <!-- tabla de 5 x 6 -->
+                  <div class="form-group table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Materia</th>
+                          <th scope="col">Semestre</th>
+                          <th scope="col">Profesor</th>
+                          <th scope="col">Creditos</th>
+                          <th scope="col">Salón</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <!-- registrar en bd -->
+                          <td name="materia">Cálculo 1</td>
+                          <td name="semestre">1</td>
+                          <td name="profesor">Daniel</td>
+                          <td name="creditos">12</td>
+                          <td name="salon">P-103</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Álgebra 1</td>
+                          <td>2</td>
+                          <td>Gustavo</td>
+                          <td>10</td>
+                          <td>O-112</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Geometría</td>
+                          <td>1</td>
+                          <td>Martín</td>
+                          <td>10</td>
+                          <td>P-114</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">4</th>
+                          <td>Lógica</td>
+                          <td>3</td>
+                          <td>Andrés</td>
+                          <td>10</td>
+                          <td>P-118</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">5</th>
+                          <td>Programación</td>
+                          <td>4</td>
+                          <td>Sofía</td>
+                          <td>10</td>
+                          <td>O-123</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" style="float: right" class="btn btn-primary">Registrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

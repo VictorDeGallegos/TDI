@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FormStudentValidationApplication<FormStudentValidation>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.tarea4.FormStudentValidation.FormStudentValidationApplication",
+            "projectName": "FormStudentValidation",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
